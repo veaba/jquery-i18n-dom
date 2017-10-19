@@ -3,7 +3,7 @@
  *@author Jo.gel
  *@date 2017/10/19
  ***********************/
-var COMMON_en = {
+var in18 = {
   'ALL': 'All',
   'INPUT_HERE': 'Input here...',
   'PLEASE_SELECT': 'Please select',
