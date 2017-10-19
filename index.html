@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!--移动支持-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Title</title>
+
+    <!--JQuery-->
+    <script src="src/js/jquery.js"></script>
+    <!--英文库-->
+    <script src="src/lib/english.js"></script>
+    <!--中文库-->
+    <script src="src/lib/chinese.js"></script>
+    <!--i18n-dom 翻译插件-->
+    <script src="src/js/jquery.i18n.dom.js"></script>
+</head>
+<body>
+<select name="language" id="language" title="language">
+    <option value="zh">中文简体</option>
+    <option value="en">English</option>
+</select>
+<span class="tt" data-t="INPUT_HERE">INPUT_HERE</span>
+<span class="tt" data-t="PLEASE_SELECT">PLEASE_SELECT</span>
+
+<input type="text" data-t="PREVIEW" value="PREVIEW" title="inputValue">
+
+<select name="ACTION" id="ACTION" title="selectTest">
+    <option data-t="CONFIGURATION" value="CONFIGURATION">CONFIGURATION</option>
+    <option data-t="REPORT" value="REPORT">REPORT</option>
+    <option data-t="UPLOAD" value="UPLOAD">Upload</option>
+</select>
+</body>
+<script>
+  //事件调用
+  $('#language').change(function () {
+    var lang = $(this).children('option:selected').val()
+
+    if (lang === 'en') {
+      _t('en')//引用英文库
+      console.info('-------------------切换成为英文版本-------------------');
+    } else if (lang === 'zh') {
+      _t('zh')//引用英文库
+      console.info('-------------------切换成为中文版本-------------------');
+
+    } else {
+      console.info('notify:not en or zh! ');
+    }
+
+  })
+</script>
+
+</html>
